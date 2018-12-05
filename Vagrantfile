@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |vb|
     vb.customize [
       "modifyvm", :id,
-      "--name", "jenkins",
+      "--name", "kubernetes",
       "--memory", "8192"
     ]
   end

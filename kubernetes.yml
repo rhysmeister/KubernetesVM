@@ -14,13 +14,13 @@
 
     tasks:
 
-    - name: Download file with custom HTTP headers
+    - name: Download file get-docker.sh
       get_url:
         url: http://get.docker.com
         dest: /home/vagrant/get-docker.sh
         mode: 0755
 
-    - name: Execute get-docket.sh
+    - name: Execute get-docker.sh
       shell: /home/vagrant/get-docker.sh && touch get-docker.success
       args:
         creates: get-docker.success
@@ -28,6 +28,7 @@
     - name: Add Kubernetes yum repo
       yum_repository:
         name: Kubernetes
+        description: Kubernetes
         baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
         gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 
