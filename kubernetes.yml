@@ -37,7 +37,7 @@
         name: kubectl
         state: present
 
-    - name: Run min ikube install script
+    - name: Run minikube install script
       script: bash/install_minikube.sh
       args:
         creates: minikube.success
